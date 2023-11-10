@@ -2,9 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const veggie = "안녕"
+  function test(){
+    return 100;
+  }
   return (
     <div className="App">
-      11
+
+      <div>{veggie}</div>
+
     </div>
   );
 }
