@@ -70,3 +70,15 @@ li{list-style: none;}
   display:flex;
   justify-content: end;
 }
+.num{
+  background-color: skyblue;
+  display: inline-block;
+  padding: 10px;
+}
+.avata{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  overflow: hidden;
+}
+.avata img{width: 100%}

@@ -1,74 +1,53 @@
 import { useState } from 'react';
 import './App.css'
-
+import { vData,vData1 } from './data';
+import { Form } from 'react-bootstrap';
 
 function App() {
-  const [num, setNum] = useState(0)
-  const [data, setData] = useState([
-    "1. Lorem ipsum dolor sit amet.",
-    "2. Ullam aspernatur velit excepturi modi!",
-    "3. Recusandae unde repellendus molestiae totam."
-  ])
-  const openList = (i)=>{
-    setNum(i)
-    setVModal(true)
-  }
-  const handleClose = ()=>{
-    setVModal(false)
-  }
-  const [vModal,setVModal] = useState(false)
-  return (
-    <div className='App'>
-      {num}
-      <ul className='lists'>
-
-        {
-          data.map(function (item, i) {
-            return (
-              <>
-                <li onClick={() => {openList(i)}}>{item}</li>
-              </>
-            )
-          })
-        }
-
-
-      </ul>
-        <button onClick={()=>{setVModal(!vModal)}}>보기/안보기</button>
-        {
-          vModal == true ? <Modal rData = {data} rNum = {num} onClose = {handleClose}/> : null
-        }
-   
+  const [viewData,setViewData] = useState(vData)
+  const [viewData1,setViewData1] = useState(vData1)
+  return(
+    <div className="app">
+      {
+        viewData.map(function(item) {
+          return(
+            <>
+            <div style={{display:"flex"}}>
+              <div>{item.id}</div>
+              <div>{item.title}</div>
+              <div>{item.content}</div>
+              <div className='avata'>
+                <img src={`./img/${item.img}`} alt="" />
+              </div>
+            </div>
+            </>
+          )
+          }
+        )
+      }
+      <hr />
+      {
+        viewData1.map(function(item) {
+          return(
+            <>
+            <div style={{display:"flex"}}>
+              <div>{item.id}</div>
+              <div>{item.title}</div>
+              <div>{item.content}</div>
+              <div className='avata'>
+                <img src={`./img/${item.img}`} alt="" />
+              </div>
+            </div>
+            </>
+          )
+          }
+        )
+      }
+      <hr />
     </div>
   )
 }
-function Modal({rData,rNum,onClose}) {
-  return(
-    <>
-      <div className="modal">
-        <div className='modalBody'>
-          <h3>이랏샤이마세</h3>
-          <p>{rData[rNum]}</p>
-        </div>
-        <div className='btnWrap'>
-          <button onClick={onClose}>닫기</button>
-        </div>
-      </div>
-    </>
-  )
-}
-// function Modal(props) {
-//   return(
-//     <>
-//       <div className="modal">
-//         <h3>안녕하세요</h3>
-//         <p>{props.rData[props.rNum]}</p>
-//         <div className='btnWrap'>
-//           <button>닫기</button>
-//         </div>
-//       </div>
-//     </>
-//   )
-// }
+
+
 
 export default App;
