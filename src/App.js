@@ -1,53 +1,34 @@
 import { useState } from 'react';
 import './App.css'
-import { vData,vData1 } from './data';
-import { Form } from 'react-bootstrap';
+import {vData} from './data.js'
+import {Button, Container, Row, Col, Navbar, Nav, NavDropdown, Card, Offcanvas} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./asset/css/style.scss"
 
+import Visual from './components/home/Visual.jsx';
+import NavBar from './components/NavBar.jsx';
+import Content from './components/home/content.jsx';
+import Banner from './components/Banner.jsx';
+import GalleryList from './components/home/GalleryList.jsx';
+import Footer from './components/footer.jsx';
 function App() {
-  const [viewData,setViewData] = useState(vData)
-  const [viewData1,setViewData1] = useState(vData1)
+  
+
+
+
+
   return(
-    <div className="app">
-      {
-        viewData.map(function(item) {
-          return(
-            <>
-            <div style={{display:"flex"}}>
-              <div>{item.id}</div>
-              <div>{item.title}</div>
-              <div>{item.content}</div>
-              <div className='avata'>
-                <img src={`./img/${item.img}`} alt="" />
-              </div>
-            </div>
-            </>
-          )
-          }
-        )
-      }
-      <hr />
-      {
-        viewData1.map(function(item) {
-          return(
-            <>
-            <div style={{display:"flex"}}>
-              <div>{item.id}</div>
-              <div>{item.title}</div>
-              <div>{item.content}</div>
-              <div className='avata'>
-                <img src={`./img/${item.img}`} alt="" />
-              </div>
-            </div>
-            </>
-          )
-          }
-        )
-      }
-      <hr />
+    <div className="App">
+     
+    <NavBar/>
+    <Visual/>
+    <GalleryList/>
+    <Content />
+    <Banner/>
+    <Footer/>
     </div>
   )
 }
-
-
+   
 
 export default App;

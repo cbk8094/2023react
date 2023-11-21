@@ -82,3 +82,62 @@ li{list-style: none;}
   overflow: hidden;
 }
 .avata img{width: 100%}
+
+.visualWrap{
+  background: gray;
+
+}
+
+.contentWrap01{
+  background: papayawhip;
+}
+
+.dot{
+  position: relative;
+
+}
+/* after/before 자식의 앞뒤 */
+.dot::after{
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #000;
+  margin: 10px auto;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-700%);
+}
+
+.card{
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+.card:hover{
+  box-shadow: 20px 20px 20px rgba(0,0,0,0.3);
+  transform: translate(-10px, -10px);
+}
+.icon{
+  width: 70px;
+  height: 70px;
+  background: skyblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner img{
+  position: absolute;
+  
+  left: 0;
+  right: 0;
+  
+}
+.banWrap{
+  background-image: url(./components/img/banner.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
